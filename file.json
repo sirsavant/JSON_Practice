@@ -1,0 +1,35 @@
+{
+  "Title": "Types of Occupations",
+  "Date": 2021,
+  "Location": "USA",
+  "Types": [
+    {
+      "Occupation": "Artist",
+      "Age": 32,
+      "Specialites": [
+       "Painting",
+       "Drawing",
+       "Sculpting"
+      ]
+    },
+    {
+      "Occupation": "Construction Worker",
+      "Age": 27,
+      "Specialities": [
+        "Building",
+        "Designing",
+        "Planning"
+      ]
+    },
+    {
+      "Occupation": "Software Developer",
+      "Age": 24,
+      "Specialities": [
+        "Programming",
+        "Designing",
+        "Collaborating",
+        "Drinking Coffee"
+      ]
+    }
+  ]
+}
