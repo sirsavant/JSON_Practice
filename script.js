@@ -47,7 +47,8 @@ function showOccupations(obj) {
     let createOccupation = document.createElement("h3");
     let createAge = document.createElement("p");
     let createSpecialtiesTitle = document.createElement("p");
-    
+    let createSpecialtiesList = document.createElement("ul");
+
     createOccupation.textContent = `Occupation: ${selectTypes["Occupation"]}`;;
     createArticle.appendChild(createOccupation);
 
@@ -58,8 +59,7 @@ function showOccupations(obj) {
     createArticle.appendChild(createSpecialtiesTitle);
 
       for (let j = 0; j < obj["Types"][i]["Specialties"].length; j++) {
-        const selectSpecialties = selectTypes["Specialties"][j];        
-        let createSpecialtiesList = document.createElement("ul");
+        const selectSpecialties = selectTypes["Specialties"][j];
         let createLineItem = document.createElement("li");
 
         createLineItem.textContent = selectSpecialties;

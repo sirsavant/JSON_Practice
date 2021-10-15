@@ -15,7 +15,7 @@
     {
       "Occupation": "Construction Worker",
       "Age": 27,
-      "Specialities": [
+      "Specialties": [
         "Building",
         "Designing",
         "Planning"
@@ -24,7 +24,7 @@
     {
       "Occupation": "Software Developer",
       "Age": 24,
-      "Specialities": [
+      "Specialties": [
         "Programming",
         "Designing",
         "Collaborating",
