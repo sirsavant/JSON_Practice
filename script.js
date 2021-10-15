@@ -7,7 +7,6 @@ JSON - a text-based data format file which has the same syntax compared to javas
 const selectHeader = document.querySelector("header");
 const selectSection = document.querySelector("section");
 
-
 let requestURL = "https://sirsavant.github.io/JSON_Practice/file.json";
 
 let request = new XMLHttpRequest();
@@ -26,6 +25,9 @@ request.onload = function() {
   showOccupations(occupations);
 }
 
+// populateHeader and showOccupations functions follow a process of creating the element > adding the specified value in the JSON as textContent to the created element > using the appendChild method to append the created element to the appropriate parent element.
+
+// populates the header 
 function populateHeader(obj) {
   let title = document.createElement("h1");
   title.textContent = obj["Title"];
@@ -36,6 +38,36 @@ function populateHeader(obj) {
   selectHeader.appendChild(subHeader);
 }
 
+// populates the section
 function showOccupations(obj) {
+  for (let i = 0; i < obj["Types"].length; i++) {
+    const selectTypes = obj["Types"][i];
 
+    let createArticle = document.createElement("article");
+    let createOccupation = document.createElement("h3");
+    let createAge = document.createElement("p");
+    let createSpecialtiesTitle = document.createElement("p");
+    
+    createOccupation.textContent = `Occupation: ${selectTypes["Occupation"]}`;;
+    createArticle.appendChild(createOccupation);
+
+    createAge.textContent = `Age: ${selectTypes["Age"]}`;
+    createArticle.appendChild(createAge);
+
+    createSpecialtiesTitle.textContent = "Specialties:";
+    createArticle.appendChild(createSpecialtiesTitle);
+
+      for (let j = 0; j < obj["Types"][i]["Specialties"].length; j++) {
+        const selectSpecialties = selectTypes["Specialties"][j];        
+        let createSpecialtiesList = document.createElement("ul");
+        let createLineItem = document.createElement("li");
+
+        createLineItem.textContent = selectSpecialties;
+        createSpecialtiesList.appendChild(createLineItem);
+      }
+
+    createArticle.appendChild(createSpecialtiesList);
+    
+    selectSection.appendChild(createArticle);
+  }
 }

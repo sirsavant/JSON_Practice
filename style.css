@@ -1,3 +1,16 @@
 h1, h2 {
   text-align: center;
 }
+
+section article {
+  width: 33%;
+  float: left;
+}
+
+section p {
+  margin: 5px 0;
+}
+
+section ul {
+  margin-top: 0;
+}
