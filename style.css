@@ -2,9 +2,13 @@ h1, h2 {
   text-align: center;
 }
 
+section {
+  margin: 0 10%;
+}
+
 section article {
   width: 33%;
-  float: left;
+  float: right;
 }
 
 section p {

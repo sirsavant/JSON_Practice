@@ -29,10 +29,12 @@ request.onload = function() {
 
 // populates the header 
 function populateHeader(obj) {
+  // occupation header
   let title = document.createElement("h1");
   title.textContent = obj["Title"];
   selectHeader.appendChild(title);
 
+  // sub heading
   let subHeader = document.createElement("h2");
   subHeader.textContent = `Location: ${obj["Location"]} // Date: ${obj["Date"]}`;
   selectHeader.appendChild(subHeader);
@@ -43,21 +45,25 @@ function showOccupations(obj) {
   for (let i = 0; i < obj["Types"].length; i++) {
     const selectTypes = obj["Types"][i];
 
+    // create elements
     let createArticle = document.createElement("article");
     let createOccupation = document.createElement("h3");
     let createAge = document.createElement("p");
     let createSpecialtiesTitle = document.createElement("p");
     let createSpecialtiesList = document.createElement("ul");
 
+    // occupation
     createOccupation.textContent = `Occupation: ${selectTypes["Occupation"]}`;;
     createArticle.appendChild(createOccupation);
 
+    // age
     createAge.textContent = `Age: ${selectTypes["Age"]}`;
     createArticle.appendChild(createAge);
 
+    // specialties
     createSpecialtiesTitle.textContent = "Specialties:";
     createArticle.appendChild(createSpecialtiesTitle);
-
+      // creating each specialties line item
       for (let j = 0; j < obj["Types"][i]["Specialties"].length; j++) {
         const selectSpecialties = selectTypes["Specialties"][j];
         let createLineItem = document.createElement("li");
@@ -65,9 +71,11 @@ function showOccupations(obj) {
         createLineItem.textContent = selectSpecialties;
         createSpecialtiesList.appendChild(createLineItem);
       }
-
+    
+    // append the specialties list to the article
     createArticle.appendChild(createSpecialtiesList);
     
+    // append article to the section
     selectSection.appendChild(createArticle);
   }
 }
